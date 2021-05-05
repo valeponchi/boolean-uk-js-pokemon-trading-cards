@@ -11,24 +11,38 @@ console.log(data);
 
 
 
-//THIS FUNCTION CREATE THE CARD WITH TITLE-PHOTO-DATA:
+//THIS FUNCTION CREATE THE CARD (TITLE-PHOTO-DATA):
 function createCard(number) {
 let cards = document.querySelector(`.cards`)
 
 let card = document.createElement(`article`)
+card.setAttribute(`class`, `card`)
 cards.append(card)
 
+//TITLE
+function capitaliFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 let cardTitle = document.createElement(`h2`)
-cardTitle.innerText = data[number].name
+cardTitle.innerText = capitaliFirstLetter(data[number].name)
 cardTitle.setAttribute(`class`, `card--title`)
 card.append(cardTitle)
 
 
+//IMG
 let cardImg = document.createElement(`img`)
 cardImg.setAttribute(`class`, `card--img`)
 cardImg.setAttribute(`src`, data[number].sprites.other["official-artwork"].front_default)
 card.append(cardImg)
+
+//CHANGE IMG when toggle
+// function changeImg(){
+//   let elem = document.getElementById(``)
+//   elem.style. //lost
+// }
+
+// let newImg = data[number].sprites. //lost
 
 
 
@@ -56,3 +70,7 @@ createCard(i);
 }
 
 //NB: I want to make the name with first letter capital
+
+//border of each card - do I have to change CSS?
+
+//
